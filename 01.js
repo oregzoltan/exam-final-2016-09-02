@@ -25,3 +25,16 @@ const cars = [{
     type: 'Trabant'
 }];
 
+function countCarsByColor(cars) {
+  var totalByColor = {};
+  cars.forEach(function (e) {
+    if (e.color in totalByColor) {
+      totalByColor[e.color]++;
+    } else {
+      totalByColor[e.color] = 1;
+    }
+  });
+  return totalByColor;
+}
+
+console.log(countCarsByColor(cars));
